@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<title>Serach By Id</title>
+	</head>
+	<body>
+		<h3>Search the product based on id</h3>
+		<div>
+			<form th:action="@{/searchbyid}" method="post">
+				<label>Enter Id : </label>
+				<input type="number"  name="id" required>
+				<button type="submit">Search</button>
+			</form>
+		</div>
+		
+		<div th:if="${product != null}">
+			<p><strong>Id:</strong><span th:text="${product.id}"></span></p>
+			<p><strong>Name:</strong><span th:text="${product.name}"></span></p>
+			<p><strong>Brand:</strong><span th:text="${product.brand}"></span></p>
+			<p><strong>Made in:</strong><span th:text="${product.madein}"></span></p>
+			<p><strong>Quantity:</strong><span th:text="${product.quantity}"></span></p>
+			<p><strong>price:</strong><span th:text="${product.price}"></span></p>
+			<p><strong>Discount Rate:</strong><span th:text="${product.discountRate}"></span></p>
+			<p><strong>Dixcount Price:</strong><span th:text="${product.discountprice}"></span></p>
+			<p><strong>Offer price:</strong><span th:text="${product.offerprice}"></span></p>
+			<p><strong>Tax Price:</strong><span th:text="${product.taxprice}"></span></p>
+			<p><strong>Final price:</strong><span th:text="${product.finalprice}"></span></p>
+			<p><strong>Stock Value:</strong><span th:text="${product.stockvalue}"></span></p>
+		</div>
+		<div th:if="${product == null}">
+			<h3> no found with this id</h3>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<title>editform</title>
+	</head>
+	<body>
+		<form th:action="@{'/editproductsave/' + ${id}}" th:object="${promodel}" method="post">
+			<label>Name :</label>
+			<input type="text" name="name" th:field="*{name}"><br><br>
+			<label>Brand :</label>
+			<input type="text" name="brand" th:field="*{brand}"><br><br>
+			<label>Made in :</label>
+			<input type="text" name="madein" th:field="*{madein}"><br><br>
+			<label>Quantity :</label>
+			<input type="text" name="quantity" th:field="*{quantity}"><br><br>
+			<label>Price :</label>
+			<input type="number" name="price" th:field="*{price}"><br><br>
+			<label>Discount Rate :</label>
+			<input type="number" name="discountRate" th:field="*{discountRate}"><br><br>
+			<button type="submit">save product</button>
+			<button type="reset">reset</button>
+			
+		</form>
+	</body>
+</html>
